@@ -4,6 +4,7 @@ import com.bradley.firstmod.FirstMod;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
@@ -24,6 +25,12 @@ public class ItemInit {
                             .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 200, 2), 1.0f)
                             .build())
                     .rarity(Rarity.EPIC)
+            ));
+
+    public static final RegistryObject<BlockItem> EXAMPLE_BLOCK_ITEM = ITEMS.register("custom_block",
+            () -> new BlockItem(BlockInit.CUSTOM_BLOCK.get(),
+                    new Item.Properties()
+                            .rarity(Rarity.UNCOMMON)
             ));
 
     public static void register(IEventBus eventBus) {
