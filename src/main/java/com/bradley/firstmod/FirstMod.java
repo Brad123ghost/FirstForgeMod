@@ -1,5 +1,6 @@
 package com.bradley.firstmod;
 
+import com.bradley.firstmod.init.BlockInit;
 import com.bradley.firstmod.init.ItemInit;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
@@ -25,6 +26,7 @@ public class FirstMod {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ItemInit.register(modEventBus);
+        BlockInit.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
