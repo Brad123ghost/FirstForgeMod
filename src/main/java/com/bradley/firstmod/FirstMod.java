@@ -1,6 +1,7 @@
 package com.bradley.firstmod;
 
 import com.bradley.firstmod.init.BlockInit;
+import com.bradley.firstmod.init.CreativeTabInit;
 import com.bradley.firstmod.init.ItemInit;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
@@ -27,6 +28,7 @@ public class FirstMod {
 
         ItemInit.register(modEventBus);
         BlockInit.register(modEventBus);
+        CreativeTabInit.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

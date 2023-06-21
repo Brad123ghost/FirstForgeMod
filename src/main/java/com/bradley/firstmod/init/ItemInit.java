@@ -16,7 +16,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class ItemInit {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "firstmod");
 
-    public static final RegistryObject<Item> FIRST_ITEM = ITEMS.register("first_item",
+    public static final RegistryObject<Item> FIRST_ITEM = CreativeTabInit.addToTab(ITEMS.register("first_item",
             () -> new Item(new Item.Properties()
                     .stacksTo(16)
                     .food(new FoodProperties.Builder()
@@ -25,13 +25,13 @@ public class ItemInit {
                             .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 200, 2), 1.0f)
                             .build())
                     .rarity(Rarity.EPIC)
-            ));
+            )));
 
-    public static final RegistryObject<BlockItem> EXAMPLE_BLOCK_ITEM = ITEMS.register("custom_block",
+    public static final RegistryObject<BlockItem> EXAMPLE_BLOCK_ITEM = CreativeTabInit.addToTab(ITEMS.register("custom_block",
             () -> new BlockItem(BlockInit.CUSTOM_BLOCK.get(),
                     new Item.Properties()
                             .rarity(Rarity.UNCOMMON)
-            ));
+            )));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
